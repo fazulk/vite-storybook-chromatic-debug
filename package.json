@@ -21,6 +21,7 @@
     "@rushstack/eslint-patch": "^1.1.0",
     "@storybook/addon-actions": "^6.4.20",
     "@storybook/addon-essentials": "^6.4.20",
+    "@storybook/addon-interactions": "^6.4.20",
     "@storybook/addon-links": "^6.4.20",
     "@storybook/builder-vite": "^0.1.24",
     "@storybook/vue3": "^6.4.20",
