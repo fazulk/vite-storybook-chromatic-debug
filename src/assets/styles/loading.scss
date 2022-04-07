@@ -1,0 +1,101 @@
+:root {
+    --loading-color                   : var(--bs-primary);  
+    --loading-spinner-size            : 42px;
+    --loading-fullscreen-spinner-size : 50px;
+    --loading-transition-duration     : 0.3s;
+}
+
+.loading-parent--relative {
+    position: relative !important
+}
+
+.loading-parent--hidden {
+    overflow: hidden !important
+}
+
+.loading-mask {
+    position        : absolute;
+    z-index         : 2000;
+    background-color: rgba(255, 255, 255, .9);
+    margin          : 0;
+    top             : 0;
+    right           : 0;
+    bottom          : 0;
+    left            : 0;
+    transition      : opacity var(--loading-transition-duration)
+}
+
+.loading-mask.is-fullscreen {
+    position: fixed
+}
+
+.loading-mask.is-fullscreen .loading-spinner {
+    margin-top: calc((0px - var(--loading-fullscreen-spinner-size))/ 2)
+}
+
+.loading-mask.is-fullscreen .loading-spinner .circular {
+    height: var(--loading-fullscreen-spinner-size);
+    width : var(--loading-fullscreen-spinner-size)
+}
+
+.loading-spinner {
+    top       : 50%;
+    margin-top: calc((0px - var(--loading-spinner-size))/ 2);
+    width     : 100%;
+    text-align: center;
+    position  : absolute
+}
+
+.loading-spinner .loading-text {
+    color    : var(--loading-color);
+    margin   : 3px 0;
+    font-size: 14px
+}
+
+.loading-spinner .circular {
+    display  : inline;
+    height   : var(--loading-spinner-size);
+    width    : var(--loading-spinner-size);
+    animation: loading-rotate 2s linear infinite
+}
+
+.loading-spinner .path {
+    animation        : loading-dash 1.5s ease-in-out infinite;
+    stroke-dasharray : 90, 150;
+    stroke-dashoffset: 0;
+    stroke-width     : 2;
+    stroke           : var(--loading-color);
+    stroke-linecap   : round
+}
+
+.loading-spinner i {
+    color: var(--loading-color)
+}
+
+.loading-fade-enter-from,
+.loading-fade-leave-to {
+    opacity: 0
+}
+
+@keyframes loading-rotate {
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes loading-dash {
+    0% {
+        stroke-dasharray : 1, 200;
+        stroke-dashoffset: 0
+    }
+
+    50% {
+        stroke-dasharray : 90, 150;
+        stroke-dashoffset: -40px
+    }
+
+    100% {
+        stroke-dasharray : 90, 150;
+        stroke-dashoffset: -120px
+    }
+}
