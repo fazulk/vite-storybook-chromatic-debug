@@ -22,12 +22,8 @@
     "@storybook/builder-vite": "^0.1.24",
     "@storybook/vue3": "^6.4.20",
     "@vitejs/plugin-vue": "^2.3.1",
-    "@vue/eslint-config-prettier": "^7.0.0",
     "babel-loader": "^8.2.4",
     "chromatic": "^6.5.3",
-    "eslint": "^8.5.0",
-    "eslint-plugin-vue": "^8.2.0",
-    "prettier": "^2.5.1",
     "vite": "^2.9.1",
     "vue-loader": "^16.8.3"
   }
